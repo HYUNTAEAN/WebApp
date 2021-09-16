@@ -15,39 +15,49 @@
 
 -- 회원 테이블 : user_tb --
 create table user_tb(
-    id  varchar2(10)    primary key
-    ,password  varchar2(10)    not null
-    ,count number
-    ,theme number
+    userid      varchar2(30)    primary key
+    ,userpwd    varchar2(30)    not null
+    ,count      number
+    ,theme      number
     ,background varchar2(1000)
 );
 
 -- 북마크 테이블 : bookmark --
 create table bookmark(
-    bseq    number      primary key
-    ,id     varchar2(10) references user_tb(id)
-    ,bookurl    varchar2(1000) not null
+    bseq        number          primary key
+    ,userid     varchar2(30)    references user_tb(userid)
+    ,book_url    varchar2(1000) not null
 );
 
 -- 음악 테이블 : music --
 create table music(
-    mseq    number      primary key
-    ,id     varchar2(10) references user_tb(id)
-    ,fileurl    varchar2(1000) not null
+    mseq        number           primary key
+    ,userid     varchar2(30)     references user_tb(userid)
+    ,file_url   varchar2(1000)   not null
 );
 
 -- 명령어 테이블 : command --
 create table command(
-    cseq    number      primary key
-    ,id     varchar2(10) references user_tb(id)
-    ,command    varchar(20) not null
-    ,comurl     varchar(1000) not null
+    cseq         number         primary key
+    ,userid      varchar2(30)   references user_tb(userid)
+    ,command     varchar(20)    not null
+    ,command_url varchar(1000)  not null
 );
 
+-- 시퀀스 --
+create sequence bookmark_seq;
+create sequence music_seq;
+create sequence command_seq;
+
+-- 제거문 -- 
 drop table user_tb;
 drop table bookmark;
 drop table music;
 drop table command;
+
+drop sequence bookmark_seq;
+drop sequence music_seq;
+drop sequence command_seq;
 
 3. 깃허브
 
