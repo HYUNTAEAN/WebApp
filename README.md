@@ -27,4 +27,4 @@ StudyCafe Kiosk Program (https://github.com/ANHENTAI/WebApp)
 
 <br><br><br><br><br>
 
-![캡처](https://user-images.githubusercontent.com/86466160/133597945-f93bcc84-abae-41e2-832a-b8a44187a240.PNG)
+![캡처](https://user-images.githubusercontent.com/86466160/133598195-2efbfd7a-8234-46ac-ba8b-a5a4ea7d00b0.PNG)
