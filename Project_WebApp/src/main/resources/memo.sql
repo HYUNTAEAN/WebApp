@@ -13,7 +13,41 @@
 
 2. 테이블 명세서
 
-	테이블 명세서 이 메모 파일에 작성 부탁드립니다.
+-- 회원 테이블 : user_tb --
+create table user_tb(
+    id  varchar2(10)    primary key
+    ,password  varchar2(10)    not null
+    ,count number
+    ,theme number
+    ,background varchar2(1000)
+);
+
+-- 북마크 테이블 : bookmark --
+create table bookmark(
+    bseq    number      primary key
+    ,id     varchar2(10) references user_tb(id)
+    ,bookurl    varchar2(1000) not null
+);
+
+-- 음악 테이블 : music --
+create table music(
+    mseq    number      primary key
+    ,id     varchar2(10) references user_tb(id)
+    ,fileurl    varchar2(1000) not null
+);
+
+-- 명령어 테이블 : command --
+create table command(
+    cseq    number      primary key
+    ,id     varchar2(10) references user_tb(id)
+    ,command    varchar(20) not null
+    ,comurl     varchar(1000) not null
+);
+
+drop table user_tb;
+drop table bookmark;
+drop table music;
+drop table command;
 
 3. 깃허브
 
