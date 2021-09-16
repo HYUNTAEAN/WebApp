@@ -44,6 +44,8 @@ create table command(
     ,comurl     varchar(1000) not null
 );
 
+-
+
 drop table user_tb;
 drop table bookmark;
 drop table music;
