@@ -25,12 +25,6 @@ nav ul {
 	background-color: #EBF5FF;
 }
 
-
-.li1 a {
-	padding: 14.5px 16px;
-	text-decoration: none;
-}
-
 .uemenu0 {
 	color: #FFD4DF;
 	position: absolute;
@@ -95,22 +89,28 @@ style="background-color: #EBF5FF">
 	<table id="DO" >
 	 	<tr class="uemenu">
 	 		<td>
-	 			<ul id="uemenu0">
-		 			<li class="li1"><a href="home"><img alt="home"
-							src="https://user-images.githubusercontent.com/86651228/133937052-a92096d4-f629-4b17-bba9-4fec084a0f86.png"
-							width="180" height="70"></a>
-					</li>
-				</ul>
+		 		&nbsp; &nbsp;<a id="uemenu0" href="home"><img alt="home"
+								src="https://user-images.githubusercontent.com/86651228/133937052-a92096d4-f629-4b17-bba9-4fec084a0f86.png"
+								width="180" height="70"></a>
 	 		</td>
-	 		<td class="li2" align="left">
-	 			<form id="uemenu00">
-						&nbsp; &nbsp; <img id="imgid" alt="ID" src="https://user-images.githubusercontent.com/86651228/133941979-c65bb25a-44b8-49c3-a0f2-81ad59b57fcc.png" width="45" height="30"> &nbsp; 
-						<input type="text" style="width: 100; border: 3px soild #6478FF; background-color: #CCE1FF;  border-radius:0.5em; -moz-border-radius: 0.5em; -webkit-border-radius: 0.5em;"> &nbsp; 
-						<img alt="PW" src="https://user-images.githubusercontent.com/86651228/133987213-84bb3063-6b7d-4442-bacd-1d2d853052f1.png" width="45" height="30">
-						<input type="password" style="width: 100; border: 3px soild #6478FF; background-color: #CCE1FF; border-radius:0.5em; -moz-border-radius: 0.5em; -webkit-border-radius: 0.5em;"> &nbsp; 
-						<input type="submit" value="login" style="font-weight:bold; background-color: #EBF5FF; color: #6991E1; border:1x solid #6991E1; border-radius:0.5em; -moz-border-radius: 0.5em; -webkit-border-radius: 0.5em; "> &nbsp;
-						<a href=""><img alt="JOIN" src="https://user-images.githubusercontent.com/86651228/133987456-67d8410b-7afc-482a-8d77-224dbcf7afeb.png" width="95" height="30"></a>
-				</form>
+	 		<td width="480"></td>
+	 		<td class="li2" align="left" id="uemenu00">
+				&nbsp; &nbsp; <img id="imgid" alt="ID" src="https://user-images.githubusercontent.com/86651228/133941979-c65bb25a-44b8-49c3-a0f2-81ad59b57fcc.png" width="45" height="30"> &nbsp; 
+			</td>
+			<td>
+				<input type="text" style="width: 100; border-bottom-style:3px soild; border-color: #6478FF; background-color: #CCE1FF;  border-radius:0.5em; -moz-border-radius: 0.5em; -webkit-border-radius: 0.5em;"> &nbsp; 
+			</td>
+			<td>
+				<img alt="PW" src="https://user-images.githubusercontent.com/86651228/133987213-84bb3063-6b7d-4442-bacd-1d2d853052f1.png" width="45" height="30">
+			</td>
+			<td>		
+				<input type="password" style="width: 100; border: 3px soild; border-color: #6478FF; background-color: #CCE1FF; border-radius:0.5em; -moz-border-radius: 0.5em; -webkit-border-radius: 0.5em;"> &nbsp; 
+			</td>
+			<td>		
+				<input type="submit" value="login" style="font-weight:bold; background-color: #EBF5FF; color: #6991E1; border:3px solid; border-color: #6478FF; border-radius:0.5em; -moz-border-radius: 0.5em; -webkit-border-radius: 0.5em; "> &nbsp;
+			</td>
+			<td>
+				<a href=""><img alt="JOIN" src="https://user-images.githubusercontent.com/86651228/133987456-67d8410b-7afc-482a-8d77-224dbcf7afeb.png" width="95" height="30"></a>
 	 		</td>
 	 	</tr>
 	</table>
