@@ -20,7 +20,7 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-//추가건 script 시작
+
     $(function () {
         $(".left_sub_menu").hide();
         $(".has_sub").click(function () {
@@ -37,11 +37,11 @@ function closeNav() {
             $('.hide_sidemenu').fadeIn();
         });
     });
-//추가건 script 끝
+
 </script>
 
 <style type="text/css">
-
+/*footer인데 안쓸지도*/
 .footer {
     position: absolute;
     left: 0;
@@ -53,11 +53,12 @@ function closeNav() {
 	background: blue;
 }
 
+
  .side-menu {
             top: 50px;
-            width: 45px;
+            width: 90px;
             z-index: 10;
-            background: #0000FF;
+            background: #316AB1;
             border-right: 1px solid rgba(0, 0, 0, 0.07);
             bottom: 50px;
             height: 100%;
@@ -67,7 +68,18 @@ function closeNav() {
             position: fixed;
             box-shadow: 0 0px 24px 0 rgb(0 0 0 / 6%), 0 1px 0px 0 rgb(0 0 0 / 2%);
         }
+        
 
+ /**/
+ 
+
+/*
+귀여운 그라데이션 바
+background: linear-gradient(137deg, #fff6b7, #f77c99, #6578f2, #c2ffd8); background-size: 800% 800%; -webkit-animation: AnimationName 16s ease infinite; -moz-animation: AnimationName 16s ease infinite; -o-animation: AnimationName 16s ease infinite; animation: AnimationName 16s ease infinite; @-webkit-keyframes AnimationName { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} } @-moz-keyframes AnimationName { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} } @-o-keyframes AnimationName { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} } @keyframes AnimationName { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} } 
+ .gradient { height:55px; color: #fff; background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); background-size: 400% 400%; animation: AnimationName 15s ease infinite; display: flex; flex-direction: column; align-items: center; justify-content: center; top: 35%; text-align: center; }
+*/
+ 
+ /**/
         .sidebar-inner {
             height: 100%;
             padding-top: 30px;
@@ -100,58 +112,66 @@ function closeNav() {
         }
 
         #sidebar-menu .fas {
-            padding-left: 5px;
+            padding-left: 3px;
         }
 
+
         /* 사이드 메뉴 */
+        /*search 테두리 선*/
         input[type="search"] {
-            width: 180px;
+            width: 220px;
             margin: 0 auto;
-            margin-left: 9px;
-            border: 2px solid #797979;
+            margin-left: 20px;
+            border: 2px solid #316AB1;
             font-size: 14px;
             margin-top: 10px;
             padding: 4px 0 4px 14px;
             border-radius: 50px;
         }
-
+		/*클릭 탭 배경 부분*/
         .left_sub_menu {
+ 			overflow-y: scroll;
             position: fixed;
             top: 50px;
-            width: 200px;
+            width: 300px;
             z-index: 10;
-            left: 45px;
+            left: 90px;
             background: white;
             border-right: 1px solid rgba(0, 0, 0, 0.07);
             bottom: 50px;
-            height: 100%;
+            height: 650px;
             margin-bottom: -70px;
             margin-top: 0px;
             padding-bottom: 0px;
             box-shadow: 0 0px 24px 0 rgb(0 0 0 / 6%), 0 1px 0px 0 rgb(0 0 0 / 2%);
             color: black;
         }
+        /*메인 스크롤바 안보이게*/
+       .left_sub_menu::-webkit-scrollbar {
+    		display: none; /* Chrome, Safari, Opera*/
+			}
 
         .sub_menu {
+
             margin-top: 50px;
         }
-
+		/*클릭탭 > 세브메뉴 hover부분 > 글씨와 배경컬러*/
         .left_sub_menu>.sub_menu li:hover {
-            color: 0000FF;
+            color: 316AB1;
             background-color: #e1e1e1;
         }
-
+		/*클릭탭 > 서브메뉴 > 줄*/
         .left_sub_menu>.sub_menu li {
             color: #333;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 200;
-            padding: 20px 0px 8px 14px;
-            border-bottom: 1px solid #e1e1e1;
+            padding: 15px 10px 10px 14px;
+            border-bottom: 1px solid #316AB1;
         }
-
+		/*welcome 아래 줄 부분*/
         .sub_menu>h2 {
             padding-bottom: 4px;
-            border-bottom: 3px solid #0000FF;
+            border-bottom: 3px solid #316AB1;
             margin-top: 30px;
             font-size: 20px;
             font-weight: 600;
@@ -161,59 +181,65 @@ function closeNav() {
             font-family: 'NotoKrB';
             line-height: 35px;
         }
-
+		/*도라에몽 머리 버튼?fasbars*/
         .sub_menu .fas {
-            color: #0000FF;
+            color: #316AB1;
             font-size: 10px;
             line-height: 20px;
             float: right;
-            margin-right: 20px;
+            margin-right: 1px;
         }
-
+        
+		/*클릭탭 > 서브메뉴 > 서브서브메뉴 글씨 사이즈*/
         .sub_menu>.big_menu>.small_menu li {
             color: #333;
             font-size: 14px;
             font-weight: 600;
-            border-bottom: 0px solid #0000FF;
+            border-bottom: 0px solid #316AB1;
             margin-left: 14px;
             padding-top: 8px;
         }
 
+
+
+		/**/
         .big_menu {
             cursor: pointer;
         }
-
+		/**/
         ul {
             padding-inline-start: 0px;
         }
-
+		/*클릭탭 > 서브메뉴 > 서브서브메뉴 글씨 컬러*/
         a {
-            color: #797979;
+            color: #316AB1;
             text-decoration: none;
             background-color: transparent;
         }
-
+		/**/
         ul {
             list-style: none;
         }
-
+		/**/
         ol,
         ul {
             margin-top: 0;
             margin-bottom: 10px;
         }
-
+		/**/
         .has_sub {
             width: 100%;
         }
-
+		/*제일 가운데 배경*/
         .overlay {
             position: fixed;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-        }
+            margin-top: 100px;
+            margin-left: 120px;
 
+        }
+		/**/
         .hide_sidemenu {
             display: none;
         }
@@ -226,6 +252,7 @@ function closeNav() {
 </head> 
 
 <body> 
+<div class = gradient></div>
 <nav  class="navbar  navbar-expand-md  bg-dark navbar-dark fixed-top"> 
  
 <button class = "navbar-toggler" type = "button"
@@ -234,18 +261,13 @@ data-toggle = "collapse" data-target = "#collapsibleNavbar">
 </button>
 <div class = "collapse navbar-collapse" id = "collapsibleNavbar">
 	<ul class = "navbar-nav">
-  	<img src = "./resources/img/weather.png" style = "width:80px;">
-	<li class = "nav-item"><a class = "nav-link" href = "#">Seoul</a></li>
-	<li class = "nav-item"><a class = "nav-link" href = "#">Busan</a></li>
-	<li class = "nav-item"><a class = "nav-link" href = "#">Incheon</a></li>
-	<li class = "nav-item"><a class = "nav-link" href = "#">Search</a></li>	
 	<li class = "nav-item"><a class = "nav-link" href = "#">now playing</a></li>	
 	</ul></div>
   <ul  class="navbar-nav"> 
 
     <li  class="nav-item"> 
     <a class="navbar-brand"  href="#">
-  	 	<img src = "./resources/img/doraemon.png" alt = "Logo" style = "width:60px;">
+  	 	<img src = "./resources/img/dora.png" alt = "Logo" style = "width:120px;">
  	</a> 
       <a class="navbar-brand"  href="#">Doraemon Webapp !</a> 
     </li> 
@@ -255,27 +277,26 @@ data-toggle = "collapse" data-target = "#collapsibleNavbar">
     <li class="nav-item"> 
       <a class="nav-link" href="#">join</a> 
     </li> 
-     <li class="nav-item dropdown"> 
-      <a class="nav-link dropdown-toggle" href="#" id = "navbardrop" data-toggle="dropdown">
-      bookmark
-      </a> 
-           <div class = "dropdown-menu">
-      	<a class = "dropdown-item" href = "#">add</a>
-        <a class = "dropdown-item" href = "#">alter</a>
-      </div>
-    </li> 
+<!--  
     <li class="nav-item dropdown"> 
       <a class="nav-link dropdown-toggle" href="#" id = "navbardrop" data-toggle="dropdown">
-      setting
+      my page
       </a> 
       <div class = "dropdown-menu">
-      	<a class = "dropdown-item" href = "#">theme</a>
-        <a class = "dropdown-item" href = "#">music</a>
+ 
+        <a class = "dropdown-item" href = "#">setting</a>
+        <a class = "dropdown-item" href = "#">setting</a>
       </div>
     </li> 
+     -->
+        <li class="nav-item"> 
+     	 <a class="nav-link" href="#">How to use</a> 
+    </li> 
   </ul> 
-  <ul>now playing</ul>
+
 </nav> 
+
+
 
 <!--  여기부터 -->
 <div id="wrapper">
@@ -286,48 +307,83 @@ data-toggle = "collapse" data-target = "#collapsibleNavbar">
                     <div id="sidebar-menu">
                         <ul>
                             <li class="has_sub"><a href="javascript:void(0);" class="waves-effect">
-                                <i class="fas fa-bars">tab !</i>
+                                <i class="fas fa-bars">
+                                  	 	<img src = "./resources/img/dora2.png"style = "width:60px;">
+                                </i>
+                                
+                                <i class="fas_weather fa-bars">
+                                  	 	<center><img src = "./resources/img/weather1.png"style = "width:90px;"></center>
+                                </i>
                             </a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- 왼쪽 서브 메뉴 -->
+            
+            
+            
             <div class="left_sub_menu">
                 <div class="sub_menu">
                     <input type="search" name="SEARCH" placeholder="SEARCH">
-                    <h2>welcome !</h2>
+
+                    <h2><img src = "./resources/img/join.png"style = "width:60px;">  welcome !</h2>
+                    
                     <ul class="big_menu">
-                        <li>bookmark<i class="arrow fas fa-angle-right"></i></li>
+                        <li>bookmark</li>
+                    </ul>
+                   
+                    <ul class="big_menu">
+                        <li>command</li>
+                    </ul>
+      
+
+                    <ul class="big_menu">
+                        <li>setting<i class="arrow fas fa-angle-right"></i></li>
                         <ul class="small_menu">
-                            <li><a href="#">add</a></li>
-                            <li><a href="#">update</a></li>
+                            <li><a href="#">mode</a></li>
+                            <li><a href="#">backgroundmusic</a></li>
                         </ul>
                     </ul>
-                    <ul class="big_menu">
-                        <li>now people</li>
-                    </ul>
-                    <ul class="big_menu">
-                        <li>command<i class="arrow fas fa-angle-right"></i></li>
-                        <ul class="small_menu">
-                            <li><a href="#">add</a></li>
-                            <li><a href="#">update</a></li>
-                        </ul>
-                    </ul>
-                    <ul class="big_menu">
-                        <li>chatting<i class="arrow fas fa-angle-right"></i></li>
-                    </ul>
+
+                    
                 </div>
+                
+                <div class="sub_menu">
+                  <h2><img src = "./resources/img/dorayaki.png"style = "width:60px;">  linked-member</h2>
+                  
+				<div style = "text-align:center; textbackground-color:#F1F1F1; padding-top:5px; padding-bottom: 10px; margin: 0 auto; margin-bottom: 30px;font-size: 15px;">
+				<p style = "font-weight: bold;">* now 8 people </p>
+                  	<div style = "height : 200; padding-top:10px; text-align:center; background-color:#EFEFEF;overflow-y: scroll;  margin: 0 auto;font-size: 13px; width: 200px;">
+                  		<p>zannabi95</p>
+                   		<p>kimddutdol</p>
+                  		<p>fallvacation</p>
+                  		<p>kimsawal88</p>  
+                  		<p>kyungjaehwan</p>
+                  		<p>blackskirt</p>  
+                  		<p>giduck123</p>  
+                  	</div></div>
+  <!--접속자수 스크린샷 </div>
+                  <center><img src = "./resources/img/member.png" style = "width:200px;"></center>
+                </div>
+ -->             
+                
+                <div class="sub_menu">
+                  <h2><img src = "./resources/img/bye.png"style = "width:60px;">  chatting !</h2>
+                  <center><img src = "./resources/img/chat.png" style = "width:200px;"></center>
+                </div>
+                
+                 <div class="sub_menu">
+                  <h2><img src = "./resources/img/peng.png"style = "width:60px;">  About Us</h2>
+                  <div style = "text-align:center; padding-top:10px">Contact me !</div>
+                </div>
+                
             </div>
-            <div class="overlay"></div>
-        </div>
+   
 
-<!--  여기까지 -->
-
-
-<div class = "main">내용</div>
-
-  <p>About us ! </p>
 </div>
+
+<div class = "overlay"><p>welcome doraemon !</p></div>
+
 </body> 
 </html>

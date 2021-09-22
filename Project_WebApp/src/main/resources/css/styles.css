@@ -103,6 +103,8 @@ a {
     cursor: pointer;
 }
 
+
+
 .nav__link:hover {
     background-color: var(--first-color);
 }
