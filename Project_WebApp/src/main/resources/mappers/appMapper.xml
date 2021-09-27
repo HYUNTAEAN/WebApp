@@ -5,5 +5,36 @@
 
 <mapper namespace="net.scit.webapp.dao.appMapper">
 
+<insert id="joinUser" parameterType="User">
+insert into user_tb(
+	userid    
+    ,userpwd       
+)values(
+	#{userid}    
+    ,#{userpwd}     
+)
+</insert>
+
+<select id="selectUser" parameterType="String" resultType="User">
+select
+	userid    
+    ,userpwd    
+    ,count     
+    ,theme     
+    ,background
+from
+	user_tb
+where
+	userid = #{userid}
+</select>
+
+<select id="userIdCheck" parameterType="String" resultType="User">
+select
+	userid 
+from
+	user_tb
+where
+	userid = #{userid}
+</select>
 
 </mapper>
