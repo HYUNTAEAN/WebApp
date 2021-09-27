@@ -46,6 +46,9 @@ data-toggle = "collapse" data-target = "#collapsibleNavbar">
 		       <li class="nav-item"> 
      	 <a class="nav-link" href="#">How to use</a> 
  			   </li> 
+		       <li class="nav-item"> 
+     	 <a class="nav-link" href="chatdesign">(임시)챗디자인</a> 
+ 			   </li> 
   			</ul> 
   			  	</c:when>
 		<c:otherwise>

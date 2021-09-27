@@ -67,6 +67,10 @@ public class HomeController {
 		System.out.println(check);
 		return check;
 	}
-
+	/*chatdesign 임시*/
+	@RequestMapping(value = "/chatdesign", method = RequestMethod.GET)
+	public String chatdesign() {
+		return "chatdesign";
+		}
 }
 
