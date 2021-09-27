@@ -18,7 +18,7 @@ public class HandlerChat extends TextWebSocketHandler {
 
 	// (<"bang_id", 방ID>, <"session", 세션>) - (<"bang_id", 방ID>, <"session", 세션>) - (<"bang_id", 방ID>, <"session", 세션>) 형태 
 	private List<Map<String, Object>> sessionList = new ArrayList<Map<String, Object>>();
-	
+	String fname;
 	// 클라이언트가 서버로 메세지 전송 처리
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
@@ -29,6 +29,7 @@ public class HandlerChat extends TextWebSocketHandler {
 		ObjectMapper objectMapper = new ObjectMapper();
 		Map<String, String> mapReceive = objectMapper.readValue(message.getPayload(), Map.class);
 		System.out.println("맵리시브:" + mapReceive);
+		fname = mapReceive.get("uname");
 		switch (mapReceive.get("cmd")) {
 		
 		// CLIENT 입장
@@ -48,11 +49,10 @@ public class HandlerChat extends TextWebSocketHandler {
 				WebSocketSession sess = (WebSocketSession) mapSessionList.get("session");
 				
 				if(bang_id.equals(mapReceive.get("bang_id"))) {
-					System.out.println(mapReceive.get("uname"));
 					Map<String, String> mapToSend = new HashMap<String, String>();
 					mapToSend.put("bang_id", bang_id);
 					mapToSend.put("cmd", "CMD_ENTER");
-					mapToSend.put("msg", uname +  "님이 입장 했습니다.");
+					mapToSend.put("msg", mapReceive.get("uname") +  "님이 입장 했습니다.");
 					
 					String jsonStr = objectMapper.writeValueAsString(mapToSend);
 					sess.sendMessage(new TextMessage(jsonStr));
@@ -73,7 +73,7 @@ public class HandlerChat extends TextWebSocketHandler {
 					Map<String, String> mapToSend = new HashMap<String, String>();
 					mapToSend.put("bang_id", bang_id);
 					mapToSend.put("cmd", "CMD_MSG_SEND");
-					mapToSend.put("msg", uname + " : " + mapReceive.get("msg"));
+					mapToSend.put("msg", mapReceive.get("uname") + " : " + mapReceive.get("msg"));
 
 					String jsonStr = objectMapper.writeValueAsString(mapToSend);
 					sess.sendMessage(new TextMessage(jsonStr));
@@ -116,7 +116,7 @@ public class HandlerChat extends TextWebSocketHandler {
 				Map<String, String> mapToSend = new HashMap<String, String>();
 				mapToSend.put("bang_id", bang_id);
 				mapToSend.put("cmd", "CMD_EXIT");
-				mapToSend.put("msg", uname + "님이 퇴장 했습니다.");
+				mapToSend.put("msg", fname + "님이 퇴장 했습니다.");
 
 				String jsonStr = objectMapper.writeValueAsString(mapToSend);
 				sess.sendMessage(new TextMessage(jsonStr));

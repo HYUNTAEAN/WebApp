@@ -7,8 +7,6 @@
 <title>Doraemon Webapp !</title>
 </head>
 <body>
-	<%String contentPage = request.getParameter("CONTENTPAGE"); %>
-	
 	<table>
 		<tr>
 			<td colspan="2">

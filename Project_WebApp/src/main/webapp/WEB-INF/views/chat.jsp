@@ -18,19 +18,16 @@
 			},
 			sendChat: function() {
 				this._sendMessage($('#uname').val(), $('#uid').val(), 'CMD_MSG_SEND', $('#message').val());
-				alert("sendMessage 작동");
 				$('#message').val('');
 			},
 			sendEnter: function() {
-				alert("sendEnter 작동");
-				alert($('#uname').val());
 				this._sendMessage($('#uname').val(), $('#uid').val(), 'CMD_ENTER', $('#message').val());
 				$('#message').val('');
 			},
 			receiveMessage: function(msgData) {
 
 				// 정의된 CMD 코드에 따라서 분기 처리
-				if(msgData.cmd == 'CMD_MSG_SEND') {					
+				if(msgData.cmd == 'CMD_MSG_SEND') {		
 					$('#divChatData').append('<div>' + msgData.msg + '</div>');
 				}
 				// 입장
@@ -73,52 +70,82 @@
 		};
 	</script>	
 	<script type="text/javascript">
-		$(window).on('load', function () {
-			webSocket.init({ url: '<c:url value="/chat" />' });	
-		});
+		//$(window).on('load', function () {
+			//webSocket.init({ url: '<c:url value="/chat" />' });	
+		//});
 		
 		function chatgo(){
 			let uid = $('#inputid').val();
+			let uname = $('#uname').val();
 			let chatUrl = 'chat?uid='+uid;
+			let myData = {"uid" : uid};
+			
 			$.ajax({
 				url: chatUrl
-				, method: 'get'
+				, method: 'POST'
+				, data : myData 
 				, success : function(resp){
-					location.reload();
+					if($('#uid').val() != ''){
+
+						webSocket.disconnect();
+					}
+					$('#uid').val(uid);
+					$('#uname').val(uname);
+					$('#uidpre').html("방번호 : "+uid);
+					$('#unamepre').html("사용자 : "+uname);
+					
+					webSocket.init({ url: '<c:url value="/chat" />' });	
 				}
 			})
 		}
 		function commandChk(){
 			let msgchk = $('#message').val()
-			alert(msgchk);
 			if(msgchk.indexOf('/',0) == 0){
 				alert("명령어임");
 			} else {
 				webSocket.sendChat();
 			}
 		}
+		
+		function idset(){
+			let mydata = {"idset" : $('#idinput').val()}
+			
+			$.ajax({
+				url:'idset'
+				, method:'GET'
+				,data:mydata
+				,success : function(resp){
+					alert("아이디 입력 완료");
+					location.reload();
+				}
+			})
+		}
+
+	
 	</script>
 	
 </head>
 <body>
+		<br><br><br><br><br><br><br><br><br>
 <div id="firstchat">
-		<br><br><br>
 		<h1>오른쪽</h1>
+		
+	<input id="idinput" type="text">
+	<input id="inputsend" type="button" value="아이디입력" onclick="idset()">;
+	
 		채팅번호 <input type="text" id="inputid">
 		<input type="button" value="채팅접속" onclick="chatgo();">
 		<div id="chatView">
 		</div>
-</div>
-<div id="secondchat">
 	<br><br><br><br>
 	<div style="width: 400px; height: 300px; padding: 10px; border: solid 1px #e1e3e9;">
 		<div id="divChatData"></div>
 	</div>
 	<div style="width: 100%; height: 10%; padding: 10px;">
-		<pre>방번호 = ${uid}</pre>
-		<input type="hidden" id="uid" value="${uid}">
-		<pre>${uname}</pre>
-		<input type="hidden" id="uname" value="${uname}">
+		<pre id="uidpre"></pre>
+		<input type="hidden" id="uid">
+		<pre id="unamepre"></pre>
+		<input type="hidden" id="uname" value="${sessionScope.uname}">
 		<input type="text" id="message" size="45" onkeypress="if(event.keyCode==13){commandChk();}" />
 		<input type="button" id="btnSend" value="채팅 전송" onclick="commandChk()" />
 	</div>
