@@ -292,7 +292,7 @@ background: linear-gradient(137deg, #fff6b7, #f77c99, #6578f2, #c2ffd8); backgro
                     </ul>
                    
                     <ul class="big_menu">
-                        <li>command</li>
+                        <li><a href="chat3">command</a></li>
                     </ul>
       
 
