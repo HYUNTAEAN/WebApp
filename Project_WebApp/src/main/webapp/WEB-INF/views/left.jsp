@@ -292,15 +292,15 @@ background: linear-gradient(137deg, #fff6b7, #f77c99, #6578f2, #c2ffd8); backgro
                     </ul>
                    
                     <ul class="big_menu">
-                        <li><a href="chat3">command</a></li>
+                        <li><a href="command">command</a></li>
                     </ul>
       
 
                     <ul class="big_menu">
                         <li>setting<i class="arrow fas fa-angle-right"></i></li>
                         <ul class="small_menu">
-                            <li><a href="#">mode</a></li>
-                            <li><a href="#">backgroundmusic</a></li>
+                            <li><a href="theme">mode</a></li>
+                            <li><a href="backgroundMusic">backgroundmusic</a></li>
                         </ul>
                     </ul>
 

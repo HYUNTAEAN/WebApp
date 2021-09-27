@@ -86,7 +86,7 @@
 				, data : myData 
 				, success : function(resp){
 					if($('#uid').val() != ''){
-
+						console.log(JSON.stringify(resp));
 						webSocket.disconnect();
 					}
 					$('#uid').val(uid);
@@ -143,7 +143,7 @@
 	</div>
 	<div style="width: 100%; height: 10%; padding: 10px;">
 		<pre id="uidpre"></pre>
-		<input type="hidden" id="uid">
+		<input type="hidden" id="uid" value="">
 		<pre id="unamepre"></pre>
 		<input type="hidden" id="uname" value="${sessionScope.uname}">
 		<input type="text" id="message" size="45" onkeypress="if(event.keyCode==13){commandChk();}" />
