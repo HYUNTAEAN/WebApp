@@ -26,10 +26,6 @@
     
 }
 
-
-
-
-
 .btn0 {
 	border: none;
 	font-size: 17px;
@@ -52,7 +48,7 @@
 	background-color:  rgba( 6, 29, 40, 0.5 );
 }
 
-table {
+.tb {
      top: 100px;
      left: 100px;
      width: 600px;
@@ -66,7 +62,7 @@ table {
      background-color: rgba( 2, 84, 126, 0.5 );
 }
 
-h2 {
+.hh {
 	color: #FFFFFF;
 	background-color: rgba( 6, 29, 40, 0.5 );
 	text-align: center;
@@ -79,12 +75,22 @@ h2 {
 </style>
 </head>
 <body>
+<table>
+<tr>
+	<td colspan="2"><jsp:include page="top.jsp" flush="false" /></td>
+</tr>
+<tr>
+	<td width="150" valign="top"><jsp:include page="left.jsp"
+					flush="false" /></td>
+</tr>
+</table>
+		<br><br><br>	
 <div class="wrapper">
 <form method="get" action="" enctype="multipart/form-data">
-	<table style="text-align: center; align-content: center;" >
+	<table class="tb" style="text-align: center; align-content: center;" >
 		<tr>
 			<td class="tdd">
-				<h2>Theme Color</h2>
+				<h2 class="hh">Theme Color</h2>
 				<div>
 					<table style="text-align: center;">
 						<tr class="tdtd">
@@ -150,7 +156,7 @@ h2 {
 		</tr>
 		<tr>
 			<td class="tdd">
-				<h2> Background Img </h2>
+				<h2 class="hh"> Background Img </h2>
 					<label class="bgi" for="backgroundImg">upload</label>
 					<input type="text" id="fileName"  name="fileName" readonly>
 					<input type="file" id="backgroundImg" name="upFile" accept="image/png, image/jepg" style="display: none" onchange="javascript:document.getElementById('fileName').value = this.value">

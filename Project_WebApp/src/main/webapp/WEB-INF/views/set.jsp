@@ -18,10 +18,10 @@
 				<jsp:include page="left.jsp" flush="false"/>
 			</td>
 			<td width="950" valign="top">
-				<jsp:include page="command.jsp" flush="false"/>
+				<jsp:include page="content.jsp" flush="false"/>
 			</td>
 			<td width="150" valign="top">
-				<jsp:include page="chat.jsp" flush="false"/>	
+				<jsp:include page="chatdesign.jsp" flush="false"/>	
 			</td>
 		</tr>
 	</table>
