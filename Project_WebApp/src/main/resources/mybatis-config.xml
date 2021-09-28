@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<!--  <typeAlias type="net.scit.webapp.vo." alias="" /> -->
+		<typeAlias type="net.scit.webapp.vo.UserVO" alias="User" />
 		
 	</typeAliases>
 	<mappers>
