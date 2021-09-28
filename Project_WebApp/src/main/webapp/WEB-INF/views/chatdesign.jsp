@@ -84,9 +84,7 @@
 
 	</script>	
 	<script type="text/javascript">
-		//$(window).on('load', function () {
-			//webSocket.init({ url: '<c:url value="/chat" />' });	
-		//});
+		
 		
 		function chatgo(){
 			let uid = $('#inputid').val();
@@ -138,7 +136,7 @@
 	</script>
 
 	<style>
-	body {
+	.bd {
 
 		display: flex;
 
@@ -242,10 +240,9 @@
 
 	</style>
 </head>
-<body>
+<body class="bd">
 
-
-<section id = "scroll">
+<br><br><br>
 <div>
 		<div style="position: relative;">
 		아이디입력 <input id="idinput" type="text">
@@ -260,7 +257,9 @@
 		<img src="#" alt="" />
 		<center><p style="background: #E9EAEF; color: gray; font-weight: bolder; font-style: italic;"> --- ${sessionScope.uname}님의 채팅방 --- </p></center>
 	</div>
+</div>
 
+<section class="sc" id="scroll">
 	<div class="message-content" id = "message-content"></div>
 
 	<div class="msg-box">
@@ -272,8 +271,6 @@
 		<input type="button" id="btnSend" value="채팅 전송" onclick="commandChk()" />
 		<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 	</div>
-</div>
-</div>
 </section>
 </body>
 </html>

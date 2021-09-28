@@ -7,7 +7,46 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="${contextPath }/resources/css/content.css" />
+<style type="text/css">
+.bookmark {
+	position:relative;
+	width:100%;
+	height:600px;
+}
+.bookmark .site {
+	position:relative;
+	float:left;
+	display:inline-block;
+	width:110px;
+	height:140px;
+	margin-bottom:50px;
+	margin-left:100px;
+}
+.bookmark .over {
+	background-color:#ffe7e7;
+	border:1px solid transparent;
+    border-radius:10px;
+}
+.bookmark .site a {
+	position:relative;
+	display:block;
+	width:100%;
+	height:100%;
+	text-decoration:none;
+}
+.bookmark .site a img {
+	width:100px;
+}
+.bookmark .site a span.text {
+	position:relative;
+	display:block;
+	width:100px;
+	top:10px;
+	text-align:center;
+	font-size:11pt;
+	font-weight:bold;
+}
+</style>
 <script type="text/javascript">
 $(document).on("mouseover", ".bookmark .site a", function(e) {
 	$(this).closest(".site").addClass("over").siblings(".site").removeClass("over");
@@ -27,6 +66,7 @@ $(document).on("click", "#confirm, #cancel", function(e) {
 </script>
 </head>
 <body>
+
 <br><br><br><br>
 	<div class="bookmark">
 		<div class="site">

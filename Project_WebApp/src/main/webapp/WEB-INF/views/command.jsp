@@ -8,20 +8,18 @@
 
 
 <style type="text/css">
-table {
-    top: 100px;
+
+.tdd {
+	top: 100px;
     left: 100px;
     width: 600px;
     padding: 0px 0px;
+    border: 0px solid #ff9800;
+    border-radius: 5px;
+    background-color: rgba( 2, 84, 126, 0.5 );
 }
 
-.tdd {
-     border: 0px solid #ff9800;
-     border-radius: 5px;
-     background-color: rgba( 2, 84, 126, 0.5 );
-}
-
-h2 {
+.hh2 {
 	color: #FFFFFF;
 	background-color: rgba( 6, 29, 40, 0.5 );
 }
@@ -52,11 +50,20 @@ pre {
 </style>
 </head>
 <body>
+<table>
+<tr>
+	<td colspan="2"><jsp:include page="top.jsp" flush="false" /></td>
+</tr>
+<tr>
+	<td width="150" valign="top"><jsp:include page="left.jsp"
+					flush="false" /></td>
+</tr>
+</table>
 <br><br><br>
 	<table style="text-align: center;" class="tdd">
 		<tr>
 			<td>
-				<h2>Command</h2> 
+				<h2 class="hh2">Command</h2> 
 				<h4>Command list</h4> <!-- 모양만 낸 것. 추후 수정 -->
 				<div align="left">
 					<pre>  Command Name         Command Add </pre>
