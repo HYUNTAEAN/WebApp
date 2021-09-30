@@ -4,10 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="net.scit.webapp.vo.UserVO" alias="User" />
+		<typeAlias type="net.scit.webapp.vo.UserVO" alias="User"/>
 		
 	</typeAliases>
 	<mappers>
-		<mapper resource="/mappers/appMapper.xml" />
+		<mapper resource="/mappers/appMapper.xml"/>
 	</mappers>
 </configuration>

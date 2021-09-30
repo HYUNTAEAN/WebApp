@@ -67,7 +67,6 @@ $(document).on("click", "#confirm, #cancel", function(e) {
 </head>
 <body>
 
-<br><br><br><br>
 	<div class="bookmark">
 		<div class="site">
 			<a href="#">

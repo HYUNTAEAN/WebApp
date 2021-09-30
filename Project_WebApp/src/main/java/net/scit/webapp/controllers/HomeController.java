@@ -1,11 +1,21 @@
 package net.scit.webapp.controllers;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.imageio.ImageIO;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +38,40 @@ public class HomeController {
 	@Autowired
 	private AppService sv;
 	
-	
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home() {
+	public String home(Model model) throws IOException { String URL ="https://darksky.net/forecast/37.5662,126.9785/si12/en4"; 
+	
+	List<String> list = new ArrayList<>();
+	Document doc = Jsoup.connect(URL).get();   
+    
+			 Elements today=doc.select(".feels-like-text"); 
+				/* map.put("ondo",today.select(".current").text()); */
+				/* map.put("summary",today.select(".summary").text()); */
+				/* Elements img = doc.select(".currently img"); */
+			 Elements summary = doc.select(".currently");
+			 Elements aa = doc.select(".center.currently__summary next swap");
+
+ 
+				/*
+				 * for (Element e : img) list.add(e.attr("src"));
+				 */
+				
+				 model.addAttribute("a", today); 
+				 model.addAttribute("b", aa); 
+
+			
+				
+									/* model.addAttribute("c", summary); */
+				 		logger.info("메인화면 이동");
+		
 		return "main";
-	}	
+	}
+	
+
+
+	
+	
 	//회원가입 
 	@RequestMapping(value = "/joinForm", method = RequestMethod.GET)
 	public String joinForm() {
@@ -71,6 +110,11 @@ public class HomeController {
 	@RequestMapping(value = "/chatdesign", method = RequestMethod.GET)
 	public String chatdesign() {
 		return "chatdesign";
+		}
+	
+	@RequestMapping(value = "/howtouse", method = RequestMethod.GET)
+	public String howtouse() {
+		return "howtouse";
 		}
 }
 
