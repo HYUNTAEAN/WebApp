@@ -1,0 +1,132 @@
+@charset "UTF-8";
+.bookmark {
+	position:relative;
+	width:100%;
+	height:600px;
+}
+.bookmark .site {
+	position:relative;
+	float:left;
+	display:inline;
+	width:110px;
+	height:140px;
+	margin-bottom:50px;
+	margin-left:100px;
+	border:1px solid transparent;
+	border-radius:10px;
+}
+
+.bookmark .over {
+	background-color:#ffe7e7;   
+}
+
+.bookmark .site a {
+	position:relative;
+	display:block;
+	width:100%;
+	height:100%;
+	text-decoration:none;
+}
+
+.bookmark .site a img {
+	width:100px;
+}
+
+.bookmark .site a span.text {
+	position:relative;
+	display:block;
+	width:100px;
+	top:10px;
+	text-align:center;
+	font-size:11pt;
+	font-weight:bold;
+}
+
+.modals {
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:rgba(0, 0, 0, 0.8);
+	top:0px;
+	left:0px;
+	display:none;
+}
+
+.modal_content {
+	position:relative;
+	width:430px;
+	height:240px;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	background-color:#fef3f9;
+	border:1px solid;	
+}
+
+.modal_content .header {
+	position:relative;
+	width:100%;
+	height:40px;
+	background-color:#feff7f;
+	border-bottom:1px solid;
+}
+
+.modal_content .header span.text {
+	position:relative;
+	left:10px;
+	top:7px;
+	font-size:14pt;
+	font-weight:bold;
+	padding-top:10px;
+}
+
+.modal_content .content {
+	position:relative;
+	width:100%;
+	height:140px;
+}
+
+.modal_content .content .siteBox {
+	position:relative;
+	width:400px;
+	height:50px;
+	left:40px;
+	top:20px;
+	background:url('../img/doraemon_icon/dorami1_50px.png') no-repeat;
+	padding-left:65px;
+}
+
+.modal_content .content input[type=text] {
+	position:relaitve;
+	width:270px;
+	height:40px;
+	font-size:12pt;
+	padding-left:10px;
+}
+
+.modal_content .content .urlBox {
+	position:relative;
+	width:400px;
+	height:50px;
+	left:40px;
+	top:30px;
+	padding-left:65px;
+	background:url('../img/doraemon_icon/dorami2_50px.png') no-repeat
+}
+
+.modal_content .buttons {
+	position:absolute;
+	right:40px;
+}
+
+.modal_content .buttons input[type=button] {
+	position:relative;
+	width:60px;
+	height:40px;
+	font-size:12pt;
+	font-weight:bold;
+	background-color:#d5ffda;
+	border:1px solid;
+	cursor:pointer;
+}
+
