@@ -24,9 +24,11 @@ create table user_tb(
 
 -- 북마크 테이블 : bookmark --
 create table bookmark(
-    bseq        number          primary key
-    ,userid     varchar2(30)    references user_tb(userid)
-    ,book_url    varchar2(1000) not null
+    bseq     number          primary key
+  , userid   varchar2(30)    references user_tb(userid)
+  , book_url varchar2(1000)  not null
+  , site_name varchar2(64) not null
+  , order_no number
 );
 
 -- 음악 테이블 : music --

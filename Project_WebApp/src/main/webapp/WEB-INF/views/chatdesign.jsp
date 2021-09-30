@@ -79,7 +79,7 @@
 			}
 		};
 		
-		$('#secScroll').scrollTop($('#secScroll')[0].scrollHeight);
+		// $('#secScroll').scrollTop($('#secScroll')[0].scrollHeight);
 
 
 	</script>	
