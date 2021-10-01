@@ -17,6 +17,8 @@
 </script>
 <style type="text/css">
 
+
+
 .color {
 	height: 70px;
 	width: 70px;
@@ -87,7 +89,7 @@
 		<br><br><br>	
 <div class="wrapper">
 <form method="get" action="" enctype="multipart/form-data">
-	<table class="tb" style="text-align: center; align-content: center;" >
+	<table class="tb" style="text-align: center; align-content: center;margin-left: 340px; margin-top: 35px" >
 		<tr>
 			<td class="tdd">
 				<h2 class="hh">Theme Color</h2>

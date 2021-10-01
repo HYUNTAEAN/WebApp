@@ -59,8 +59,8 @@ pre {
 					flush="false" /></td>
 </tr>
 </table>
-<br><br><br>
-	<table style="text-align: center;" class="tdd">
+
+	<table style="text-align: center;margin-left: 335px; margin-top:108px;" class="tdd">
 		<tr>
 			<td>
 				<h2 class="hh2">Command</h2> 

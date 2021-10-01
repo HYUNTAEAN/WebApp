@@ -22,8 +22,8 @@ body {
 }
 
 .box {
-	margin-left: -150px;
-	margin-top: 80px;
+	margin-left: -220px;
+	margin-top: -50px;
 	position: absolute;
 	top: 50%;
 	left: 50%;

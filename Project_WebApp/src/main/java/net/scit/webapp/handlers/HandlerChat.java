@@ -72,6 +72,7 @@ public class HandlerChat extends TextWebSocketHandler {
 				if (bang_id.equals(mapReceive.get("bang_id"))) {
 					Map<String, String> mapToSend = new HashMap<String, String>();
 					mapToSend.put("bang_id", bang_id);
+					mapToSend.put("uname", mapReceive.get("uname"));
 					mapToSend.put("cmd", "CMD_MSG_SEND");
 					mapToSend.put("msg", mapReceive.get("uname") + " : " + mapReceive.get("msg"));
 
