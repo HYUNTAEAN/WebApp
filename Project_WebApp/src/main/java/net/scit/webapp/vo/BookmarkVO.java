@@ -8,8 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class BookmarkVO {
-	private int bseq;			//시퀀스
-	private String userid;		//아이디
-	private String bookurl;		//북마크 주소
-	
+	private int bseq; // 시퀀스
+	private String userId; // 아이디
+	private String bookUrl; // 북마크 주소
+	private String siteName;
+	private int orderNo;
 }

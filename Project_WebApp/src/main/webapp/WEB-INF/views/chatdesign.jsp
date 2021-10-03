@@ -99,7 +99,8 @@
 		}
 	};
 
-	$('#secScroll').scrollTop($('#secScroll')[0].scrollHeight);
+	// 이것때문에 나머지 스크립트도 오류
+	// $('#secScroll').scrollTop($('#secScroll')[0].scrollHeight);
 </script>
 <script type="text/javascript">
 	function chatgo() {
