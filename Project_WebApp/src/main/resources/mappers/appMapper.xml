@@ -36,5 +36,20 @@ from
 where
 	userid = #{userid}
 </select>
-
+	
+	<insert id="addBookmark" parameterType="bookmarkVO">
+		<selectKey keyProperty="bseq" resultType="int" order="AFTER">
+			SELECT BOOKMARK_SEQ.CURRVAL FROM DUAL
+		</selectKey>
+		INSERT INTO BOOKMARK(BSEQ, USERID, BOOK_URL, SITE_NAME, ORDER_NO)
+		VALUES(BOOKMARK_SEQ.NEXTVAL, #{userId}, #{bookUrl}, #{siteName}, (SELECT NVL(MAX(ORDER_NO) + 1, 1) FROM BOOKMARK WHERE USERID = #{userId}))
+	</insert>
+	
+	<select id="selectBookmarkList" parameterType="string" resultType="bookmarkVO">
+	SELECT BSEQ, USERID, BOOK_URL, SITE_NAME, ORDER_NO FROM BOOKMARK WHERE USERID = #{userId}
+	</select>
+	
+	<select id="selectBookmark" parameterType="int" resultType="bookmarkVO">
+	SELECT BSEQ, USERID, BOOK_URL, SITE_NAME, ORDER_NO FROM BOOKMARK WHERE BSEQ = #{bseq}
+	</select>
 </mapper>

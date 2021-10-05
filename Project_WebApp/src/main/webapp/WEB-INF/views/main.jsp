@@ -8,7 +8,8 @@
 </head>
 <body>
 	<jsp:forward page="set.jsp">
-		<jsp:param name="CONTENTPAGE" value="chat.jsp"/>
+		<jsp:param name="CONTENTPAGE" value="chat.jsp" />
+		<jsp:param name="boomark" value="${bookmarkList }" />
 	</jsp:forward>
 </body>
 </html>

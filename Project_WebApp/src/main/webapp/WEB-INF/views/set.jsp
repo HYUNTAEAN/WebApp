@@ -17,15 +17,16 @@
 			<td width="150" valign="top">
 				<jsp:include page="left.jsp" flush="false"/>
 			</td>
-			<td width="950" valign="top"><div style="margin-top: 100px; margin-left: 70px;">
-				<jsp:include page="content.jsp" flush="false"/></div>
+			<td width="950" valign="top">
+				<jsp:include page="content.jsp" flush="false">
+					<jsp:param name="bookmark" value="${param.bookmarkList }" />
+				</jsp:include>
 			</td>
-			<td width="500" valign="top">
+			<td width="150" valign="top">
 				<jsp:include page="chatdesign.jsp" flush="false"/>	
 			</td>
 		</tr>
 	</table>
-	
 
 
 	
