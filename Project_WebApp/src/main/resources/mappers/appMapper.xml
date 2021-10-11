@@ -79,4 +79,90 @@ FROM
 WHERE
 	count = 1
 </select>
+<insert parameterType="command" id="newCommand"> 
+insert into command(
+	cseq
+	,userid
+	,command
+	,command_url 
+)values(
+	command_seq.nextval
+	,#{userid}
+	,#{command}
+	,#{commandurl}
+) 
+</insert>
+
+<select parameterType="String" id="selectCmdList" resultType="command"> 
+select
+	cseq
+	,userid
+	,command
+	,command_url as commandurl 
+from
+	command 
+where
+	userid = #{userid} 
+</select>
+
+<delete parameterType="int" id="deleteCmd"> 
+delete from
+	command
+where
+	cseq = #{cseq} 
+</delete>
+
+<update parameterType="map" id="backImg"> 
+update
+	user_tb 
+set
+	background = #{background}
+	,savedFilename = #{savedFilename}
+where
+	userid = #{userid} 
+</update>
+
+<select parameterType="String" id="BackImgSelect" resultType="String"> 
+select
+	background
+	,savedFilename
+from
+	user_tb 
+where
+	userid = #{userid} 
+</select>
+
+<update parameterType="User" id="themeC"> 
+update
+	user_tb 
+set
+	theme = #{theme} 
+where
+	userid = #{userid} 
+</update>
+
+<select parameterType="String" id="setBackColor" resultType="int"> 
+select
+	theme
+from
+	user_tb 
+where
+	userid = #{userid} 
+</select>
+
+<select parameterType="String" id="selectImg" resultType="String"> 
+SELECT
+	savedfilename as savedFilename 
+FROM
+	user_tb 
+WHERE
+	userid = #{userid} 
+</select>
+
+<select parameterType="String" id="checkCmd" resultType="command"> 
+select* from
+	command 
+where
+	command = #{command} 
+</select>
 </mapper>

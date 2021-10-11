@@ -13,5 +13,5 @@ public class UserVO {
 	private int count;				//접속여부
 	private int theme;				//배경테마 번호
 	private String background;		//배경사진명
-	
+	private String savedFilename;
 }

@@ -10,6 +10,7 @@
 	<typeAliases>
 		<typeAlias type="net.scit.webapp.vo.UserVO" alias="User" />
 		<typeAlias type="net.scit.webapp.vo.BookmarkVO" alias="bookmarkVO" />
+		<typeAlias type="net.scit.webapp.vo.CommandVO" alias="command"/>
 	</typeAliases>
 
 	<mappers>
