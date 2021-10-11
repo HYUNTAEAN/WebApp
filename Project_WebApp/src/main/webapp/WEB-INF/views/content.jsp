@@ -24,6 +24,11 @@ $(document).on("click", "#add", function(e) {
 	$(".modals").fadeIn();
 });
 
+$(document).on("click", "#cancel", function(e) {
+	console.log("remove");
+	$(".modals").fadeOut();
+});
+
 $(document).on("click", "#confirm", function(e) {
 	let siteName = $("#siteName").val();
 	let bookUrl = $("#bookUrl").val();
@@ -48,8 +53,9 @@ $(document).on("click", "#confirm", function(e) {
 		success : function(data) {
 			if (Number(data.result) == 1) {
 				let num = $(".bookmark .mark").length;
+				let url = "http://"+bookUrl;
 				let div = $("<div>").addClass("site mark")
-					.append($("<a>", {href:bookUrl})
+					.append($("<a>", {href:url})
 						.append($("<img>").prop("src", "${contextPath}/resources/img/doraemon_icon/dora" + (num + 1) + ".png"))
 						.append($("<span>").addClass("text").text(siteName))
 					)
@@ -73,7 +79,7 @@ $(document).on("click", "#confirm", function(e) {
 	<div class="bookmark">
 	<c:forEach var="bookmark" items="${bookmarkList }">
 		<div class="site mark">
-			<a href="${bookmark.bookUrl }">
+			<a href="http://${bookmark.bookUrl }">
 				<img src="${contextPath }/resources/img/doraemon_icon/dora${bookmark.orderNo }.png" />
 				<span class="text">${bookmark.siteName }</span>
 			</a>

@@ -52,4 +52,31 @@ where
 	<select id="selectBookmark" parameterType="int" resultType="bookmarkVO">
 	SELECT BSEQ, USERID, BOOK_URL, SITE_NAME, ORDER_NO FROM BOOKMARK WHERE BSEQ = #{bseq}
 	</select>
+
+<update id="sessionUpdate" parameterType="String">
+UPDATE
+	user_tb
+SET
+	count = 1
+WHERE
+	userid = #{userid}
+</update>
+
+<update id="sessionDelete" parameterType="String">
+UPDATE
+	user_tb
+SET
+	count = 0
+WHERE
+	userid = #{userid}
+</update>
+
+<select id="selectAllUser" resultType="User">
+SELECT
+	*
+FROM
+	user_tb
+WHERE
+	count = 1
+</select>
 </mapper>

@@ -9,15 +9,12 @@ import org.springframework.stereotype.Repository;
 import net.scit.webapp.vo.BookmarkVO;
 import net.scit.webapp.vo.UserVO;
 
-@Repository
+@Repository("AppRepository")
 public class AppRepository {
 
 	@Autowired
 	SqlSession session;
 
-	public void exam() {
-		appMapper mapper = session.getMapper(appMapper.class);
-	}
 
 	public int joinUser(UserVO user) {
 		int cnt = 0;
@@ -81,4 +78,36 @@ public class AppRepository {
 		}
 		return null;
 	}
+
+	public int sessionUpdate(String userid) {
+		System.out.println("1");
+		
+			appMapper mapper = session.getMapper(appMapper.class);
+			int result = mapper.sessionUpdate(userid);
+		
+		return result;
+	}
+
+	public int sessionDelete(String userid) {
+		int result = 0;
+		try{
+			appMapper mapper = session.getMapper(appMapper.class);
+			result = mapper.sessionDelete(userid);
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	public List<UserVO> selectAllUser() {
+		try{
+			appMapper mapper = session.getMapper(appMapper.class);
+			return mapper.selectAllUser();
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+
 }

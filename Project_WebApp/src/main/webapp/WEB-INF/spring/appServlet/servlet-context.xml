@@ -39,4 +39,5 @@
     </websocket:handlers>
     	<beans:bean id="handlerChat" class="net.scit.webapp.handlers.HandlerChat" />
     
+    
 </beans:beans>
