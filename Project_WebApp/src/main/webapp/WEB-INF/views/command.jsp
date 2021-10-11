@@ -5,6 +5,73 @@
 <head>
 <meta charset="UTF-8">
 <title>command</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js" 
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+function deleteCmd(seq){
+	
+	var cseq = seq;
+	
+	if(!confirm("정말 삭제하시겠습니까?")){
+		alert("취소되었습니다.");
+	}else{
+		location.href = "deleteCmd?cseq=" + cseq;
+		alert("삭제되었습니다.");
+	}
+}
+</script>
+<script>
+function newCommand(){
+	let command = $('#command').val();
+	let commandurl = $('#commandurl').val();
+	
+	if(command == '') {
+		alert("명령어 이름을 입력 해 주세요.");
+		return;
+	}
+	
+	if(commandurl == '') {
+		alert("명령어 실행 주소를 입력 해 주세요.");
+		return;
+	}
+	location.href="newCommand?cmdname="+command+"&commandurl="+commandurl;
+}
+</script>
+<script>
+var cmdCheck = 0;
+
+function checkCmd(){
+	var inputed = $('.cmd').val();
+	$.ajax({
+		data: {
+			cmd : inputed	
+		},
+		url : "checkCmd.jy",
+		success : function(data) {
+			if(inputed == "" && data =='0') {
+				$("#sbtn").prop("disabled", true);
+				$("#sbtn").css("background-color", "#aaaaaa");
+				$("#command").css("background-color", "#FFCECE");
+				cmdCheck = 0;
+			} else if (data == '0'){
+				$("#command").css("background-color", "#B0F6AC");
+				cmdCheck = 1;
+				if(cmdCheck == 1){
+					$("#sbtn").prop("disabled", false);
+                    $("#sbtn").css("background-color", "rgba( 6, 29, 40, 0.5 )");
+				} 
+			} else if (data == '1') {
+                    $("#sbtn").prop("disabled", true);
+                    $("#sbtn").css("background-color", "#FFFFFF");
+                    $("#command").css("background-color", "#FFCECE");
+                    cmdCheck = 0;
+			}
+		}
+	})
+}
+
+
+</script>
 
 
 <style type="text/css">
@@ -62,34 +129,37 @@ pre {
 
 	<table style="text-align: center;margin-left: 335px; margin-top:108px;" class="tdd">
 		<tr>
-			<td>
+			<td width="950">
 				<h2 class="hh2">Command</h2> 
-				<h4>Command list</h4> <!-- 모양만 낸 것. 추후 수정 -->
+				<h4>Command list</h4>
 				<div align="left">
-					<pre>  Command Name         Command Add </pre>
+					<pre>  Command Name         Command url </pre>
 				</div>
-				<input type="text" value="/Command Name" style="width: 20%" disabled>
-				<input type="text" value="Command Add" style="width: 50%" disabled>
-				<input type="button" class="btn0" value="modify">
-				<input type="button" class="btn0" value="Delete">
+				<c:forEach items="${list }" var="Com" >
+					<input type="text" value="${Com.command }" style="width: 20%" disabled>
+					<input type="text" value="${Com.commandurl }" style="width: 50%" disabled>
+					<input type="button" class="btn0" value="Delete" onclick="deleteCmd(${Com.cseq })">
+					<br><br>
+				</c:forEach>
 				<br>
 				<br>
 			</td>
 		</tr>
 		<tr>
+			
+		</tr>
+		<tr>
 			<td>
 				<h4>New Command</h4>
-				<div align="left">
-				<pre>         Command Name</pre>
-				<input type="text" style="width: 20%">
-				</div>
-				<br>
-				<div align="left">
-				<pre>         Commmand Add</pre>
-				<input type="text" style="width: 65%">
-				<br>
-				</div>
-				<input class="btn0" type="submit" value="submit">
+					<div align="left" style="display:inline;">
+						<pre>  Command Name         Commmand url</pre>
+					</div>
+					<div align="left" style="display:inline;">
+						<input type="text" id="command" style="width: 20%" class="cmd" oninput="checkCmd()">
+						<input type="text" id="commandurl" style="width: 50%">
+						<input class="btn0" id="sbtn" type="button" value="submit" disabled="disabled" onclick="newCommand();">
+					</div>
+					<br><br>
 			</td>
 		</tr>
 	</table>

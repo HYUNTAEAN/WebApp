@@ -68,6 +68,28 @@ $(function () {
     
 });
 
+$(document).ready(function(){
+	$.ajax({
+		url : 'themeColor'
+		,method : 'GET'
+		,success : function(theme){
+			if(theme == 0){
+				$('.side-menu').css('background', '#316AB1');
+			} else if (theme == 1) {
+				$('.side-menu').css('background', '#d5304b');
+			} else if (theme == 2) {
+				$('.side-menu').css('background', '#e4ba3f');
+			} else if (theme == 3) {
+				$('.side-menu').css('background', '#4eaa18');
+			} else if (theme == 4) {
+				$('.side-menu').css('background', '#187caa');
+			} else if (theme == 5) {
+				$('.side-menu').css('background', '#4f4f4f');
+			}
+			
+		}
+	});
+})
 
 </script>
 
