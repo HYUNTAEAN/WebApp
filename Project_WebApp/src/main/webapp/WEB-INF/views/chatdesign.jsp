@@ -140,21 +140,7 @@
 		}
 	}
 
-	function idset() {
-		let mydata = {
-			"idset" : $('#idinput').val()
-		}
 
-		$.ajax({
-			url : 'idset',
-			method : 'GET',
-			data : mydata,
-			success : function(resp) {
-				alert("아이디 입력 완료");
-				location.reload();
-			}
-		})
-	}
 </script>
 
 <style>
@@ -284,9 +270,6 @@ section div {
 	<br>
 	<div>
 		<div style="position: relative;">
-			아이디입력 <input id="idinput" type="text"> <input type="button"
-				value="ID Check !" onclick="idset()"
-				style="width: 100px; background-color: #287ae6; border: none; color: #fff; padding: 4px 0; text-align: center; text-decoration: none; display: inline-block; font-size: 13px; margin: 4px; cursor: pointer;"><br>
 			<br> 채팅방번호 <input type="text" id="inputid"> <input
 				type="button" value="Go chat !" onclick="chatgo();"
 				style="width: 100px; background-color: #287ae6; border: none; color: #fff; padding: 4px 0; text-align: center; text-decoration: none; display: inline-block; font-size: 13px; margin: 4px; cursor: pointer;">
@@ -312,7 +295,7 @@ section div {
 			<pre id="uidpre"></pre>
 			<input type="hidden" id="uid">
 			<pre id="unamepre"></pre>
-			<input type="hidden" id="uname" value="${sessionScope.uname}">
+			<input type="hidden" id="uname" value="${sessionScope.loginId}">
 			<input type="text" id="message" size="45"
 				onkeypress="if(event.keyCode==13){commandChk();}" /> <input
 				type="button" id="btnSend" value="Chat !!" onclick="commandChk()"

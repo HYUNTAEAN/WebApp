@@ -64,6 +64,8 @@ $(function () {
             
 		}
 	});
+    
+    
 });
 
 
@@ -341,13 +343,10 @@ ol, ul {
 						<p style="font-weight: bold;">* now 8 people</p>
 						<div
 							style="height: 200; padding-top: 10px; text-align: center; background-color: #EFEFEF; overflow-y: scroll; margin: 0 auto; font-size: 13px; width: 200px;">
-							<p>zannabi95</p>
-							<p>kimddutdol</p>
-							<p>fallvacation</p>
-							<p>kimsawal88</p>
-							<p>kyungjaehwan</p>
-							<p>blackskirt</p>
-							<p>giduck123</p>
+							
+					<c:forEach var="user" items="${userList}" varStatus="stat">
+							<p>${user.userid}</p>
+					</c:forEach>
 						</div>
 					</div>
 					<!--접속자수 스크린샷 </div>

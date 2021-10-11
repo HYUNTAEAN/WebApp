@@ -20,9 +20,6 @@ public class AppService {
 	@Autowired
 	private HttpSession session;
 
-	public void example() {
-
-	}
 
 	public String joinUser(UserVO user) {
 		String path = "";
@@ -43,8 +40,10 @@ public class AppService {
 			path = "redirect:/loginForm";
 		} else {
 			if (inputData.getUserpwd().equals(searchData.getUserpwd())) {
-				session.setAttribute("loginId", searchData.getUserid());
-				session.setAttribute("loginPwd", searchData.getUserpwd());
+				String userid = searchData.getUserid();
+				session.setAttribute("loginId", userid);
+				repo.sessionUpdate(userid);
+				
 				path = "redirect:/";
 			} else {
 				path = "redirect:/loginForm";
@@ -54,7 +53,10 @@ public class AppService {
 	}
 
 	public String logout() {
-		session.removeAttribute("loginId");
+		//String userid = (String) session.getAttribute("loginId");
+		//repo.sessionDelete(userid);
+		
+		session.invalidate();
 		return "redirect:/";
 	}
 
@@ -81,4 +83,12 @@ public class AppService {
 	public BookmarkVO selectBookmark(int bseq) {
 		return repo.selectBookmark(bseq);
 	}
+
+	public List<UserVO> selectAllUser() {
+		return repo.selectAllUser();
+	}
+
+
+	
+
 }

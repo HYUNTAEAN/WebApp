@@ -5,8 +5,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Doraemon Webapp !</title>
+	<script
+	  src="https://code.jquery.com/jquery-3.6.0.js"
+	  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	  crossorigin="anonymous"></script>
+<script>
+function closePage(){
+	
+		$.ajax({
+			url:'checker'
+			,method:'GET'
+			,success:function(resp){
+				
+			}
+		})
+	
+}
+</script>
 </head>
-<body>
+<body onbeforeunload="closePage()">
 	<table>
 		<tr>
 			<td colspan="2">

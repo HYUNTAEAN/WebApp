@@ -19,4 +19,11 @@ public interface appMapper {
 	
 	BookmarkVO selectBookmark(int bseq);
 
+	int sessionUpdate(String userid);
+
+	int sessionDelete(String userid);
+
+	List<UserVO> selectAllUser();
+
+
 }

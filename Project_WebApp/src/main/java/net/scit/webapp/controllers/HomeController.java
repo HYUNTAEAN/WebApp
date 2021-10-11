@@ -1,11 +1,7 @@
 package net.scit.webapp.controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -19,8 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import net.scit.webapp.service.AppService;
 import net.scit.webapp.vo.BookmarkVO;
@@ -33,12 +27,15 @@ public class HomeController {
 
 	@Autowired
 	private AppService sv;
+	
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, HttpSession session) throws IOException {
+		
+		
+		
 		String URL = "https://darksky.net/forecast/37.5662,126.9785/si12/en4";
 
-		List<String> list = new ArrayList<>();
 		Document doc = Jsoup.connect(URL).get();
 
 		Elements today = doc.select(".feels-like-text");
@@ -62,72 +59,14 @@ public class HomeController {
 		List<BookmarkVO> bookmarkList = sv.selectBookmarkList(userId);
 		model.addAttribute("bookmarkList", bookmarkList);
 
+		
+		List<UserVO> userList = sv.selectAllUser();
+		model.addAttribute("userList", userList);
 		/* model.addAttribute("c", summary); */
 		logger.info("메인화면 이동");
-
+		
+		
 		return "main";
-	}
-
-	// 회원가입
-	@RequestMapping(value = "/joinForm", method = RequestMethod.GET)
-	public String joinForm() {
-		return "joinForm";
-	}
-
-	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public String join(UserVO user) {
-		return sv.joinUser(user);
-	}
-
-	// 로그인
-	@RequestMapping(value = "/loginForm", method = RequestMethod.GET)
-	public String loginForm() {
-		return "loginForm";
-	}
-
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(UserVO inputData) {
-		return sv.selectUser(inputData);
-	}
-
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout() {
-		return sv.logout();
-	}
-
-	@RequestMapping(value = "/idcheck", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		return "idcheck";
-	}
-
-	@RequestMapping(value = "/user/idCheck", method = RequestMethod.GET)
-	@ResponseBody
-	public int idCheck(@RequestParam("userid") String userid) {
-		System.out.println(userid);
-		int check = sv.userIdCheck(userid);
-		System.out.println(check);
-		return check;
-	}
-
-	/* chatdesign 임시 */
-	@RequestMapping(value = "/chatdesign", method = RequestMethod.GET)
-	public String chatdesign() {
-		return "chatdesign";
-	}
-
-	@RequestMapping(value = "/howtouse", method = RequestMethod.GET)
-	public String howtouse() {
-		return "howtouse";
-	}
-
-	@RequestMapping(value = "/addBookmark", method = RequestMethod.POST)
-	@ResponseBody
-	public Map<String, String> addBookmark(BookmarkVO vo, HttpSession session) {
-		vo.setUserId((String) session.getAttribute("loginId"));
-		int bseq = sv.addBookmark(vo);
-		Map<String, String> output = new HashMap<>();
-		output.put("result", String.valueOf(bseq));
-		return output;
 	}
 
 }

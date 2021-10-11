@@ -44,13 +44,13 @@
 		<!-- 		<a><img src = "./resources/img/dora.png" alt = "Logo" style = "width:120px;">
 		</a> -->
 
-		<a  
+		<a  href="/webapp"
 			style="font-size: 30px; color: #F1F2F8; font-family: 'Pacifico'; text-shadow: -.2em .2em #4682B4;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Doraemon
 			Web&nbsp;&nbsp;</a>
 
 	</c:if> <c:choose>
 		<c:when test="${empty sessionScope.loginId}">
-			<a
+			<a	href="/webapp"
 				style="font-size: 30px; color: #F1F2F8; font-family: 'Pacifico'; text-shadow: -.2em .2em #708090;">&nbsp;&nbsp;Doraemon
 				Web&nbsp;&nbsp;</a>
 
@@ -65,7 +65,7 @@
 				<li><a class = "nav-link" href="howtouse" 
 	onclick="window.open(this.href, '_blank', 'width=1300, height=800'); return false;">How to
 						use</a></li>
-				<li class="nav-item"><a class="nav-link" href="chatdesign">(임시)챗디자인</a>
+				<li class="nav-item"><a class="nav-link" href="chatdesign"></a>
 				</li>
 			</ul>
 		</c:when>

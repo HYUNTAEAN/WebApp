@@ -36,13 +36,6 @@ public class ChatController{
 	
 		return "Success";
 	}
-	
-	@RequestMapping(value="/idset")
-	public @ResponseBody String idset(HttpSession session, String idset){
-		
-		session.setAttribute("uname", idset);
-		
-		return "";
-	}
+
 	
 }
