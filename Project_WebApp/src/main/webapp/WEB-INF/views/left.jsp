@@ -295,7 +295,7 @@ ol, ul {
 
 
 
-	<!--  여기부터 -->
+<!--  여기부터 -->
 	<div id="wrapper">
 		<div class="topbar" style="position: absolute; top: 0;">
 			<!-- 왼쪽 메뉴 -->
@@ -308,7 +308,7 @@ ol, ul {
 										src="./resources/img/dora2.png" style="width: 60px;">
 								</i>
 
-
+<!-- 코드 변경  -->
 							</a></li>
 							<p
 								style="font-size: 17px; font-family: 'Noto Sans Display', sans-serif; font-weight: bolder; color: #B0C4DE; margin-left: 10px;">
@@ -316,9 +316,10 @@ ol, ul {
 									style="background: linear-gradient(to top, #191970 80%, transparent 50%);)"><strong
 									style="font-size: 30px; color: #ffffff; text-shadow: 2px 2px 2px #696969; font-family: 'Noto Sans Display', sans-serif;">${a}</strong></span>
 							</p>
+							<p style="font-size: 15px; font-family: 'Noto Sans Display', sans-serif; font-weight: bolder; color: #B0C4DE; margin-left: 10px;" class="weathertab">${c}</p>
+					  						  	
+					  	
 
-							<p class="weathertab">${b}</p>
-							<p class="weathertab">${c}</p>
 						</ul>
 					</div>
 				</div>
@@ -347,7 +348,7 @@ ol, ul {
 						<li>setting<i class="arrow fas fa-angle-right"></i></li>
 						<ul class="small_menu">
 							<li><a href="theme">mode</a></li>
-							<li><a href="backgroundMusic">backgroundmusic</a></li>
+							<li><a href="bgm">backgroundmusic</a></li>
 						</ul>
 					</ul>
 

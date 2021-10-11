@@ -1,5 +1,5 @@
 
-<!-- 개복치이니 조심해주세요 -->
+<!-- yeah -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -204,6 +204,9 @@ section div {
 	-webkit-transform: translate(-30px, -2px);
 }
 
+
+ 
+ 
 .from-infor {
 	margin-bottom: 7px;
 	margin-top: 7px;
@@ -296,7 +299,7 @@ section div {
 			<input type="hidden" id="uid">
 			<pre id="unamepre"></pre>
 			<input type="hidden" id="uname" value="${sessionScope.loginId}">
-			<input type="text" id="message" size="45"
+			<input type="text" id="message" size="35"
 				onkeypress="if(event.keyCode==13){commandChk();}" /> <input
 				type="button" id="btnSend" value="Chat !!" onclick="commandChk()"
 				style="width: 100px; background-color: #0c5df4; border: none; color: #fff; padding: 4px 0; text-align: center; text-decoration: none; display: inline-block; font-size: 15px; margin: 4px; cursor: pointer;" />

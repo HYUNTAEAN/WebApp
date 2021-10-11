@@ -39,7 +39,7 @@ function closePage(){
 					<jsp:param name="bookmark" value="${param.bookmarkList }" />
 				</jsp:include>
 			</td>
-			<td width="150" valign="top">
+			<td width="400" valign="top">
 				<jsp:include page="chatdesign.jsp" flush="false"/>	
 			</td>
 		</tr>
