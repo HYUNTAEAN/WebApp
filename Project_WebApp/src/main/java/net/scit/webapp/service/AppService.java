@@ -86,7 +86,7 @@ public class AppService {
 	public int addBookmark(BookmarkVO vo) {
 		return repo.addBookmark(vo);
 	}
-
+//1
 	public List<BookmarkVO> selectBookmarkList(String userId) {
 		return repo.selectBookmarkList(userId);
 	}
