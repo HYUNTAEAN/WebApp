@@ -79,6 +79,21 @@ public class HomeController {
 	  } else {
 		  model.addAttribute("classic", classic);
 	  }
+		
+	String userId = (String) session.getAttribute("loginId");
+		if (userId == null) {
+			userId = "";
+		}
+		List<BookmarkVO> bookmarkList = sv.selectBookmarkList(userId);
+		model.addAttribute("bookmarkList", bookmarkList);
+
+
+		List<UserVO> userList = sv.selectAllUser();
+		model.addAttribute("userList", userList);
+		/* model.addAttribute("c", summary); */
+		logger.info("메인화면 이동");
+		
+		
 	  return "main";
 	}
 
