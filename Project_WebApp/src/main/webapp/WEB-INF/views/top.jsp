@@ -19,6 +19,7 @@
 
 </head>
 <body>
+
 	<div class=gradient></div>
 	<!-- 위쪽 바 -->
 	<nav class="navbar  navbar-expand-md  bg-dark navbar-dark fixed-top">
@@ -29,8 +30,17 @@
 	</button>
 	<div class="collapse navbar-collapse" id="collapsibleNavbar">
 		<ul class="navbar-nav">
-			<li class="nav-item"><a style="font-family: 'Noto Sans Display', sans-serif;color: white;font-style: italic;">now
-					playing ♪</a></li>
+			<input type="hidden" value="" id = "mcheck" />
+			
+			<li><audio controls style="width: 300px; height : 25px;"><source src="./resources/img/doraemon.mp3" 
+			type="audio/mpeg"></audio>
+			</li>
+			
+			<a style="font-family: 'Noto Sans Display', sans-serif;color: white;font-style: italic;">&nbsp;&nbsp;&nbsp;now
+				playing ♪</a>
+
+					
+					
 		</ul>
 	</div>
 
