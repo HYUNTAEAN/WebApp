@@ -2,6 +2,9 @@
 # WebApp(도라에몽..?) - Spring - MVC
 StudyCafe Kiosk Program (https://github.com/ANHENTAI/WebApp)
 
+![dora1](https://user-images.githubusercontent.com/88410343/143783340-ac1e9858-b397-4e36-9da7-c5fa50b652e9.png)
+
+
 # Service
 - 로그인, 로그아웃, 회원가입 기능
 - 테마/배경 변경, 명령어 설정, 배경음악 설정 
@@ -26,5 +29,7 @@ StudyCafe Kiosk Program (https://github.com/ANHENTAI/WebApp)
 6. Socket을 이용한 통신 학습
 
 <br><br><br><br><br>
+
+
 
 ![캡처](https://user-images.githubusercontent.com/86466160/133598195-2efbfd7a-8234-46ac-ba8b-a5a4ea7d00b0.PNG)
